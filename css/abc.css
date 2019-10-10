@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<style type="text/css">
+	<style>
 		table,td {
-			border:1px solid;
+			border:1px solid #000;
 		}
 	</style>
 </head>
