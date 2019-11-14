@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<style>
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		#carouse101.box {
+			width: 600px;
+			height: 340px;
+			position: relative;
+			border: 2px solid orange;
+			margin: 20px auto;
+		}
+		#carouse101 .imgs {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		#carouse101 .imgs li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			z-index: -1;
+			transition: 1s linear;
+		}
+		#carouse101 .imgs .show {
+			opacity: 1;
+			z-index: 0;
+		}
+		#carouse101 .imgs img {
+			width: 600px;
+			height: 340px;
+			display: block;
+			/* vertical-align: middle; */
+		}
+		#carouse101 .arrows span {
+			position: absolute;
+			top: 215px;
+			font-family: "Courier New";
+			font-size: 36px;
+			color: #fff;
+			background: #000;
+			text-align: center;
+			width: 20px;
+			height: 30px;
+			line-height: 30px;
+			cursor: pointer;
+			opacity: .3;
+		}
+		#carouse101.box:hover .arrows span {
+			opacity: .3;
+		}
+		#carouse101.box .arrows span:hover {
+			opacity: 1;
+		}
+		#carouse101 .arrows .left {
+			left: 0;
+			border-radius: 0 15px 15px 0;
+		}
+		#carouse101 .arrows .right {
+			right: 0;
+			border-radius:15px 0 0 15px;
+		}
+		#carouse101 .dots {
+			position: absolute;
+			bottom: 15px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#carouse101 .dots li {
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			background: orange;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			margin: 0 2px;
+			cursor: pointer;
+			transition: 1s linear;
+		}
+		#carouse101 .dots .act {
+			background: lightskyblue;
+			color: #fff;
+		}
+		#carouse102.box {
+			width: 600px;
+			height: 340px;
+			position: relative;
+			overflow: hidden;
+			border: 2px solid orange;
+			margin: 20px auto;
+		}
+		#carouse102 .imgs {
+			position: absolute;
+			top: 0;
+			display: flex;
+		}
+		#carouse102 .imgs li {
+			transition: 1s linear;
+		}
+		#carouse102 .imgs img {
+			width: 600px;
+			height: 340px;
+			display: block;
+			/* vertical-align: middle; */
+		}
+		#carouse102 .arrows span {
+			position: absolute;
+			top: 150px;
+			font-family: "Courier New";
+			font-size: 18px;
+			color: #fff;
+			background: #000;
+			text-align: center;
+			width: 20px;
+			height: 30px;
+			line-height: 30px;
+			cursor: pointer;
+			opacity: 0;
+		}
+		#carouse102.box:hover .arrows span {
+			opacity: .3;
+		}
+		#carouse102.box .arrows span:hover {
+			opacity: 1;
+		}
+		#carouse102 .arrows .left {
+			left: 0;
+			border-radius: 0 15px 15px 0;
+		}
+		#carouse102 .arrows .right {
+			right: 0;
+			border-radius:15px 0 0 15px;
+		}
+		#carouse102 .dots {
+			position: absolute;
+			bottom: 20px;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+		}
+		#carouse102 .dots li {
+			width: 20px;
+			height: 20px;
+			text-align: center;
+			background: orange;
+			border-radius: 50%;
+			border: 2px solid #ddd;
+			margin: 0 2px;
+			cursor: pointer;
+			transition: 1s linear;
+		}
+		#carouse102 .dots .act {
+			background: lightskyblue;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="carouse101" class="box">
+		<ul class="imgs">
+			<li class="show"><a href="#"><img src="images/1.jpg" alt="1"></a></li>
+			<li><a href="#"><img src="images/2.jpg" alt="2"></a></li>
+			<li><a href="#"><img src="images/3.jpg" alt="3"></a></li>
+			<li><a href="#"><img src="images/4.jpg" alt="4"></a></li>
+			<li><a href="#"><img src="images/5.jpg" alt="5"></a></li>
+		</ul>
+		<div class="arrows">
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+		<ul class="dots">
+			<li class="act">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div id="carouse102" class="box">
+		<ul class="imgs" style="left:0;">
+			<li><a href="#"><img src="images/1.jpg" alt="1"></a></li>
+			<li><a href="#"><img src="images/2.jpg" alt="2"></a></li>
+			<li><a href="#"><img src="images/3.jpg" alt="3"></a></li>
+			<li><a href="#"><img src="images/4.jpg" alt="4"></a></li>
+			<li><a href="#"><img src="images/5.jpg" alt="5"></a></li>
+		</ul>
+		<div class="arrows">
+			<span class="left">&lt;</span>
+			<span class="right">&gt;</span>
+		</div>
+		<ul class="dots">
+			<li class="act">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<script>
+		// 轮播图的主要工作就是调整图片列表的定位(或是显隐)。编写思路，指定index值，根据index值显示对应的图片并设置按钮特殊样式
+		function lbt(id){
+			var box=document.getElementById(id);// 轮播图显示区域
+			var imgsBox=box.getElementsByClassName('imgs')[0];// 图片列表区域
+			var imgs=imgsBox.getElementsByTagName('li');// 图片列表
+			var arrowL=box.getElementsByClassName('left')[0];// 左箭头
+			var arrowR=box.getElementsByClassName('right')[0];// 右箭头
+			var dots=box.getElementsByClassName('dots')[0];// 按钮容器
+			var btns=dots.getElementsByTagName('li');// 按钮列表
+			var n=btns.length; // 图片数量/按钮数量
+			var index=0; // 当前显示的图片序号，0号开始,范围是[0,n-1]
+			var t=null; // 定时器变量/标识符
+			var s=2; // 自动轮播的时间间隔(秒)
+			// 显示指定index对应的图片
+			function showImg (index) {
+				for(var i=0;i<n;i++){
+					imgs[i].removeAttribute('class');
+				}
+				imgs[index].className='show';
+			}
+			// 指定index的按钮显示特殊样式
+			function showBtn (index) {
+				// 清楚全部按钮特殊样式
+				for(var i=0;i<btns.length;i++){
+					btns[i].removeAttribute('class');
+				}
+				// 设置该按钮特殊样式
+				btns[index].className='act';
+			}
+			// 设置右箭头点击事件
+			arrowR.onclick=function () {
+				index=(index<n-1)?index+1:0; // 序号的边界判断
+				showImg(index);
+				showBtn (index);
+			}
+			// s设置左箭头点击事件
+			arrowL.onclick=function () {
+				index=index>0?index-1:n-1; // 序号的边界判断
+				showImg(index);
+				showBtn (index);
+			}
+			// 设置所有按钮的点击事件
+			for(var i=0;i<btns.length;i++){
+				btns[i].idx=i;
+				btns[i].onmouseover=function () {
+					index=this.idx;
+					showImg(index);
+					showBtn(index);
+				}
+			}
+			// 鼠标进入轮播图区域时，停止自动轮播
+			box.onmouseover=function () {
+				clearInterval(t);
+			}
+			// 鼠标离开轮播图区域时，继续自动轮播
+			box.onmouseout=function () {
+				t=setInterval(arrowR.onclick, s*1000);
+			}
+			box.onmouseout(); // 执行一次mouseout操作，开启定时器
+		}
+		function lbt1(id){
+			// 轮播图显示区域
+			var box=document.getElementById(id);
+			// 图片列表
+			var imgs=box.getElementsByClassName('imgs')[0];
+			// 左箭头
+			var arrowL=box.getElementsByClassName('left')[0];
+			// 右箭头
+			var arrowR=box.getElementsByClassName('right')[0];
+			// 按钮容器
+			var dots=box.getElementsByClassName('dots')[0];
+			// 按钮列表
+			var btns=dots.getElementsByTagName('li');
+			var imgWidth=600; // 一幅图宽度
+			var n=btns.length; // 图片数量/按钮数量
+			var index=0; // 当前显示的图片序号，0号开始,范围是[0,n-1]
+			var t=null; // 定时器变量/标识符
+			var s=2; // 自动轮播的时间间隔(秒)
+			// 显示指定index对应的图片
+			function showImg (index) {
+				imgs.style.left=-1*index*imgWidth+'px';
+			}
+			// 指定index的按钮显示特殊样式
+			function showBtn (index) {
+				// 清楚全部按钮特殊样式
+				for(var i=0;i<btns.length;i++){
+					btns[i].removeAttribute('class');
+				}
+				// 设置该按钮特殊样式
+				btns[index].className='act';
+			}
+			// 设置右箭头点击事件
+			arrowR.onclick=function () {
+				index=(index<n-1)?index+1:0; // 序号的边界判断
+				showImg(index);
+				showBtn (index);
+			}
+			// s设置左箭头点击事件
+			arrowL.onclick=function () {
+				index=index>0?index-1:n-1; // 序号的边界判断
+				showImg(index);
+				showBtn (index);
+			}
+			// 设置所有按钮的点击事件
+			for(var i=0;i<btns.length;i++){
+				btns[i].idx=i;
+				btns[i].onmouseover=function () {
+					index=this.idx;
+					showImg(index);
+					showBtn(index);
+				}
+			}
+			// 鼠标进入轮播图区域时，停止自动轮播
+			box.onmouseover=function () {
+				clearInterval(t);
+			}
+			// 鼠标离开轮播图区域时，继续自动轮播
+			box.onmouseout=function () {
+				t=setInterval(arrowR.onclick, s*1000);
+			}
+			box.onmouseout(); // 执行一次mouseout操作，开启定时器
+		}
+		lbt('carouse101');
+		lbt1('carouse102');
+	</script>
+</body>
+</html>
