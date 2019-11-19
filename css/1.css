@@ -16,6 +16,7 @@ img {
 	display: flex;
 	position: absolute;
 	top: 0;
+	transition: 0.5s linear;
 }
 .ctboxs .ct1 {
 	left: 0
