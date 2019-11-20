@@ -1,0 +1,49 @@
+/*标题600*50 内容（图片）600*340*/
+img {
+	width: 600px;
+	height: 340px;
+}
+.ctboxs {
+	width:600px;
+	height: 540px; 
+	position: relative;
+	overflow: hidden;
+	border: 2px solid orange;
+}
+.ctboxs .ctbox {
+	width: 600px;
+	height: 390px;
+	position: absolute;
+	left: 0;
+	transition: 0.5s linear;
+}
+.ctboxs .ct1 {
+	top: 0
+}
+.ctboxs .ct2 {
+	top: 390px;
+}
+.ctboxs .ct3 {
+	top: 440px;
+}
+.ctboxs .ct4 {
+	top: 490px;
+}
+.ctboxs .ctbox .title {
+	color: white;
+	font-size: 22px;
+	line-height: 50px;
+	text-align: center;
+}
+.ctboxs .ct1 .title {
+	background: blue;
+}
+.ctboxs .ct2 .title {
+	background: orange;
+}
+.ctboxs .ct3 .title {
+	background: green;
+}
+.ctboxs .ct4 .title {
+	background: lightblue;
+}
